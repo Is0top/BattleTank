@@ -20,7 +20,11 @@ public:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
 
+private:
 	// Start moving the barrel so that the shot hit where
 	// crosshair intersects with the world
 	void AimTowardsCrosshair();
+
+	// Return an out parameter, true if hit landscape
+	bool GetSightRayHitLocation(FVector& OutHitLocation) const;
 };
