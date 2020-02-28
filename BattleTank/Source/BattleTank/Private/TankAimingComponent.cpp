@@ -78,8 +78,8 @@ void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection)
 	// Work out the difference between current barrel rotation and aim direction
 	auto BarrelRotator = Barrel->GetForwardVector().Rotation();
 	auto AimAsRotator = AimDirection.Rotation();
-	auto DelataRotator = AimAsRotator - BarrelRotator;
+	auto DeltaRotator = AimAsRotator - BarrelRotator;
 	//UE_LOG(LogTemp, Warning, TEXT("AimAsRotator: %s"), *AimAsRotator.ToString());
 
-	Barrel->Elevate(5.f);
+	Barrel->Elevate(DeltaRotator.Pitch);
 }
