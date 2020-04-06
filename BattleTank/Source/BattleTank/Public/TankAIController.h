@@ -23,7 +23,11 @@ public:
 private:
 	virtual void BeginPlay() override;
 
-	void AimTowardsPlayer();
+	void AimTowardsPlayer(); // obsolete. remove
+
+	// How close AI tank will get to the player before it stops moving towards him
+	UPROPERTY(EditDefaultsOnly)
+	float AcceptanceRadius = 3000.0f;
 
 	ATank* ControlledTank = nullptr;
 };
