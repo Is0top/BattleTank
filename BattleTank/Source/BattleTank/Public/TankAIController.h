@@ -1,5 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
+// Copyright Yuri Khromov 
 #pragma once
 
 #include "CoreMinimal.h"
@@ -8,10 +7,11 @@
 #include "TankAIController.generated.h"
 
 // Forward declarations
-class ATank;
+
+class UTankAimingComponent;
 
 /**
- * 
+ * Responsible for AI Tank aiming
  */
 UCLASS()
 class BATTLETANK_API ATankAIController : public AAIController
@@ -23,11 +23,9 @@ public:
 private:
 	virtual void BeginPlay() override;
 
-	void AimTowardsPlayer(); // obsolete. remove
-
 	// How close AI tank will get to the player before it stops moving towards him
 	UPROPERTY(EditDefaultsOnly)
 	float AcceptanceRadius = 3000.0f;
 
-	ATank* ControlledTank = nullptr;
+
 };
