@@ -28,6 +28,11 @@ protected:
 	void FoundAimingComponent(UTankAimingComponent* AimCompRef);
 
 private:
+	virtual void SetPawn(APawn* InPawn) override;
+
+	UFUNCTION()
+	void OnPossessedTankDeath();
+
 	// Start moving the barrel so that the shot hit where
 	// crosshair intersects with the world
 	void AimTowardsCrosshair();
